@@ -1,0 +1,3 @@
+# Niente build: il sito è fatto di file statici, pubblicati così come sono.
+[build]
+  publish = "."
