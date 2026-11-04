@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perché Claude non vede il grafico nel tuo documento | Didea</title>
+<meta name="description" content="Da Word e dagli altri documenti che non sono PDF, Claude estrae solo il testo. Ecco cosa vede davvero e come fargli leggere una figura.">
+<meta property="og:title" content="Perché Claude non vede il grafico nel tuo documento">
+<meta property="og:description" content="Da Word e dagli altri documenti che non sono PDF, Claude estrae solo il testo. Ecco cosa vede davvero e come fargli leggere una figura.">
+<meta property="og:image" content="https://didea.it/img/og.png">
+<meta property="og:url" content="https://didea.it/guide/grafico-nel-documento/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Didea">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://didea.it/guide/grafico-nel-documento/">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Perché Claude non vede il grafico nel tuo documento",
+ "description": "Da Word e dagli altri documenti che non sono PDF, Claude estrae solo il testo. Ecco cosa vede davvero e come fargli leggere una figura.",
+ "inLanguage": "it",
+ "datePublished": "2026-11-04",
+ "dateModified": "2026-11-04",
+ "mainEntityOfPage": "https://didea.it/guide/grafico-nel-documento/",
+ "image": "https://didea.it/img/og.png",
+ "author": { "@id": "https://didea.it/#org", "@type": "Organization", "name": "Didea Studio", "url": "https://didea.it/" },
+ "publisher": { "@id": "https://didea.it/#org", "@type": "Organization", "name": "Didea Studio", "logo": { "@type": "ImageObject", "url": "https://didea.it/img/icon-512.png" } }
+}
+</script>
+<meta name="theme-color" content="#A8512F">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face { font-family: "Inter"; src: url("/fonts/inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+  :root { --bg: #FAF8F6; --surface: #FFFFFF; --line: #E5DED7; --text: #2B2420; --text-soft: #6B6058; --accent: #A8512F; --accent-text: #A8512F; --bubble-me: #F3E3DA; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1C1815; --surface: #262019; --line: #3A322B; --text: #F2ECE6; --text-soft: #B7ACA3; --accent-text: #D98A63; --bubble-me: #3A241A; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 1.0625rem; line-height: 1.65; }
+  a { color: var(--accent-text); text-underline-offset: 0.18em; }
+  a:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; border-radius: 4px; }
+  .wrap { width: min(720px, 100%); margin: 0 auto; padding: 0 24px; }
+  header { background: var(--accent); color: #FFFFFF; padding: 24px 0 56px; }
+  .brand { display: inline-flex; align-items: center; gap: 8px; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; color: inherit; text-decoration: none; }
+  .brand svg { width: 30px; height: 30px; fill: currentColor; }
+  h1 { margin: 40px 0 0; font-size: clamp(2.25rem, 6.5vw, 3.5rem); line-height: 1.06; font-weight: 750; letter-spacing: -0.035em; }
+  .updated { margin: 16px 0 0; font-size: 0.9375rem; }
+  main { padding: 48px 0 72px; }
+  .short { padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+  .short h2 { margin: 0 0 8px; font-size: 1rem; line-height: 1.5; color: var(--accent-text); letter-spacing: 0; }
+  .short p { margin: 0; font-size: 1.1875rem; line-height: 1.5; font-weight: 550; }
+  h2 { margin: 56px 0 12px; font-size: clamp(1.5rem, 3.6vw, 2rem); line-height: 1.15; font-weight: 720; letter-spacing: -0.025em; }
+  p { margin: 0 0 16px; }
+  ol { margin: 0 0 16px; padding-left: 24px; }
+  li { margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; }
+  th, td { padding: 12px 8px 12px 0; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+  th { font-size: 0.9375rem; color: var(--text-soft); font-weight: 600; }
+  .label { margin: 24px 0 8px; font-size: 0.9375rem; color: var(--text-soft); text-align: right; }
+  .bubble { margin: 0 0 0 auto; width: fit-content; max-width: 100%; padding: 14px 20px; border-radius: 20px 20px 4px 20px; background: var(--bubble-me); }
+  .cta-box { margin-top: 64px; padding: 32px; border-radius: 20px; background: var(--accent); color: #FFFFFF; }
+  .cta-box h2 { margin: 0 0 8px; }
+  .cta-box p { margin: 0 0 24px; }
+  .cta { display: inline-block; padding: 14px 24px; border-radius: 14px; background: #FFFFFF; color: #8B3F22; font-weight: 650; text-decoration: none; }
+  .source { margin-top: 40px; color: var(--text-soft); font-size: 0.9375rem; }
+  footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--text-soft); font-size: 0.9375rem; }
+  footer p:last-child { margin-bottom: 0; }
+  @media (max-width: 460px) { .wrap { padding: 0 16px; } .cta-box { padding: 24px; } .cta { display: block; text-align: center; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Didea, pagina iniziale">
+      <svg viewBox="7.75 8 25 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.75 9h8a11 11 0 0 1 0 22h-8v-4.5l-4.5 4.5V9zm8 7.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4z"/></svg>
+      Didea
+    </a>
+    <h1>Perché Claude non vede il grafico nel tuo documento</h1>
+    <p class="updated">Aggiornata il 4 novembre 2026</p>
+  </div>
+</header>
+<main>
+  <article class="wrap">
+    <div class="short">
+      <h2>In breve</h2>
+      <p>Da Word e dagli altri documenti che non sono PDF, Claude estrae solo il testo: le immagini dentro il file non le legge. Fai uno screenshot del grafico e allega quello.</p>
+    </div>
+
+    <h2>Cosa vede davvero Claude</h2>
+    <table>
+      <thead><tr><th scope="col">Cosa alleghi</th><th scope="col">Cosa analizza</th></tr></thead>
+      <tbody>
+        <tr><td>Foto e screenshot</td><td>L'immagine</td></tr>
+        <tr><td>PDF fino a 100 pagine</td><td>Testo e figure, compresi i grafici</td></tr>
+        <tr><td>PDF da 101 a 1000 pagine</td><td>Solo il testo</td></tr>
+        <tr><td>Word e altri documenti non PDF</td><td>Solo il testo</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Come fargli leggere il grafico</h2>
+    <ol>
+      <li>Fai uno screenshot della figura.</li>
+      <li>Allegalo alla chat. Sull'app Android premi + accanto al campo di testo, poi Foto.</li>
+      <li>Di' cosa vuoi sapere da quel grafico.</li>
+    </ol>
+    <p class="bubble">Commenta l'andamento in questo grafico.</p>
+
+    <h2>Un'altra strada: il PDF</h2>
+    <p>Se il documento è breve e le figure sono tante, puoi salvarlo in PDF e allegare quello. Sopra le 100 pagine questa strada non basta: Claude analizza solo il testo, quindi per una figura importante torna allo screenshot.</p>
+
+    <section class="cta-box">
+      <h2>Ora prova a farlo tu</h2>
+      <p>Questa guida viene da una lezione di Didea, un corso in italiano su Claude, l'assistente AI di Anthropic. Nell'app impari a usare gli allegati con esercizi da cinque minuti.</p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=it.didea.app">Scarica gratis su Google Play</a>
+    </section>
+
+    <p class="source">Fonte: <a href="https://support.claude.com/en/articles/8241126-upload-files-to-claude">Upload files to Claude</a>, il Centro assistenza di Anthropic, controllato il 4 novembre 2026. Le regole possono cambiare. Il consiglio di salvare in PDF è di Didea e discende da queste regole.</p>
+    <p class="source">Leggi anche: <a href="/guide/scrivere-un-prompt/">Come scrivere un prompt che l'AI capisce</a>.</p>
+  </article>
+</main>
+<footer>
+  <div class="wrap">
+    <p><a href="/">Torna a Didea</a></p>
+    <p>Didea è un'app indipendente. Non è affiliata, sponsorizzata né approvata da Anthropic. "Claude" è un marchio di Anthropic.</p>
+  </div>
+</footer>
+</body>
+</html>
