@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide per usare l'AI | Didea</title>
+<meta name="description" content="Guide brevi e gratuite di Didea: una domanda comune sull'AI, una risposta verificata sulle fonti ufficiali, con esempi da copiare.">
+<meta property="og:title" content="Guide per usare l'AI">
+<meta property="og:description" content="Una domanda comune, una risposta verificata, con esempi da copiare.">
+<meta property="og:image" content="https://didea.it/img/og.png">
+<meta property="og:url" content="https://didea.it/guide/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Didea">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://didea.it/guide/">
+<meta name="theme-color" content="#A8512F">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face { font-family: "Inter"; src: url("/fonts/inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+  :root { --bg: #FAF8F6; --surface: #FFFFFF; --line: #E5DED7; --text: #2B2420; --text-soft: #6B6058; --accent: #A8512F; --accent-text: #A8512F; --bubble-me: #F3E3DA; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1C1815; --surface: #262019; --line: #3A322B; --text: #F2ECE6; --text-soft: #B7ACA3; --accent-text: #D98A63; --bubble-me: #3A241A; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 1.0625rem; line-height: 1.65; }
+  a { color: var(--accent-text); text-underline-offset: 0.18em; }
+  a:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; border-radius: 4px; }
+  .wrap { width: min(720px, 100%); margin: 0 auto; padding: 0 24px; }
+  header { background: var(--accent); color: #FFFFFF; padding: 24px 0 56px; }
+  .brand { display: inline-flex; align-items: center; gap: 8px; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; color: inherit; text-decoration: none; }
+  .brand svg { width: 30px; height: 30px; fill: currentColor; }
+  h1 { margin: 40px 0 0; font-size: clamp(2.25rem, 6.5vw, 3.5rem); line-height: 1.06; font-weight: 750; letter-spacing: -0.035em; }
+  .updated { margin: 16px 0 0; font-size: 0.9375rem; }
+  main { padding: 48px 0 72px; }
+  .short { padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+  .short h2 { margin: 0 0 8px; font-size: 1rem; line-height: 1.5; color: var(--accent-text); letter-spacing: 0; }
+  .short p { margin: 0; font-size: 1.1875rem; line-height: 1.5; font-weight: 550; }
+  h2 { margin: 56px 0 12px; font-size: clamp(1.5rem, 3.6vw, 2rem); line-height: 1.15; font-weight: 720; letter-spacing: -0.025em; }
+  p { margin: 0 0 16px; }
+  ol { margin: 0 0 16px; padding-left: 24px; }
+  li { margin-bottom: 8px; }
+  .label { margin: 24px 0 8px; font-size: 0.9375rem; color: var(--text-soft); text-align: right; }
+  .bubble { margin: 0 0 0 auto; width: fit-content; max-width: 100%; padding: 14px 20px; border-radius: 20px 20px 4px 20px; background: var(--bubble-me); }
+  .cta-box { margin-top: 64px; padding: 32px; border-radius: 20px; background: var(--accent); color: #FFFFFF; }
+  .cta-box h2 { margin: 0 0 8px; }
+  .cta-box p { margin: 0 0 24px; }
+  .cta { display: inline-block; padding: 14px 24px; border-radius: 14px; background: #FFFFFF; color: #8B3F22; font-weight: 650; text-decoration: none; }
+  .source { margin-top: 40px; color: var(--text-soft); font-size: 0.9375rem; }
+  footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--text-soft); font-size: 0.9375rem; }
+  footer p:last-child { margin-bottom: 0; }
+  @media (max-width: 460px) { .wrap { padding: 0 16px; } .cta-box { padding: 24px; } .cta { display: block; text-align: center; } }
+  .guide-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+  .guide-list a { display: block; padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; text-decoration: none; color: var(--text); }
+  .guide-list a:hover strong { text-decoration: underline; }
+  .guide-list strong { display: block; color: var(--accent-text); font-size: 1.1875rem; line-height: 1.35; }
+  .guide-list span { display: block; margin-top: 6px; color: var(--text-soft); }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Didea, pagina iniziale">
+      <svg viewBox="7.75 8 25 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.75 9h8a11 11 0 0 1 0 22h-8v-4.5l-4.5 4.5V9zm8 7.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4z"/></svg>
+      Didea
+    </a>
+    <h1>Guide per usare l'AI</h1>
+    <p class="updated">Una domanda comune, una risposta verificata sulle fonti ufficiali</p>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <ul class="guide-list">
+      <li><a href="/guide/scrivere-un-prompt/"><strong>Come scrivere un prompt che l'AI capisce</strong><span>Tre ingredienti e una prova da fare prima di inviare.</span></a></li>
+      <li><a href="/guide/grafico-nel-documento/"><strong>Perché Claude non vede il grafico nel tuo documento</strong><span>Cosa legge davvero Claude in un documento e come fargli vedere una figura.</span></a></li>
+    </ul>
+    <div class="cta-box">
+      <h2>Vuoi fare pratica?</h2>
+      <p>Su Didea trovi lezioni da cinque minuti ed esercizi pratici, dalla prima chat a Claude Code.</p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=it.didea.app">Scarica gratis su Google Play</a>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <p><a href="/">Torna a Didea</a></p>
+    <p>Didea è un'app indipendente. Non è affiliata, sponsorizzata né approvata da Anthropic. "Claude" è un marchio di Anthropic.</p>
+  </div>
+</footer>
+</body>
+</html>
