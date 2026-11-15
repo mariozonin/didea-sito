@@ -397,6 +397,15 @@
   .ev-social a:hover span:last-child, .ev-social a:hover { text-decoration: underline; }
   .ev-ico { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: #FFFFFF; flex: none; }
   .ev-ico svg { width: 18px; height: 18px; fill: currentColor; }
+  .cast-home { background: var(--bubble-me); }
+  .cast-row { list-style: none; margin: 40px 0 32px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .cast-row a { display: block; padding: 12px 12px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; text-decoration: none; color: var(--text); text-align: center; transition: transform .2s ease; }
+  .cast-row a:hover { transform: translateY(-3px); }
+  .cast-row img { display: block; width: 100%; height: auto; border-radius: 12px; background: var(--bg); }
+  .cast-row strong { display: block; margin-top: 10px; font-size: 1.125rem; color: var(--accent-text); }
+  .cast-row span { display: block; font-size: 0.9375rem; color: var(--text-soft); line-height: 1.35; }
+  .cast-link { display: inline-block; padding: 14px 24px; border-radius: 14px; background: var(--accent); color: #FFFFFF; font-weight: 650; text-decoration: none; }
+  @media (max-width: 820px) { .cast-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 820px) { .ev-grid { grid-template-columns: minmax(0, 1fr); } }
   @media (max-width: 820px) {
     .hero-mark { width: 620px; height: 620px; right: -240px; top: -40px; }
@@ -497,7 +506,7 @@
     <div class="wrap rhythm-grid">
       <div>
         <h2>Pochi minuti, ma tutti i giorni</h2>
-        <p class="section-intro">Scegli 5, 10 o 15 minuti al giorno. Il resto serve a non perdere il ritmo, con un tono sobrio e senza mascotte.</p>
+        <p class="section-intro">Scegli 5, 10 o 15 minuti al giorno. Il resto serve a non perdere il ritmo, con un tono sobrio.</p>
         <dl class="facts">
           <div><dt>Ripasso del giorno</dt><dd>Cinque domande in due minuti, partendo da quelle che hai sbagliato.</dd></div>
           <div><dt>Serie e scudi</dt><dd>Ogni 3 giorni di fila guadagni uno scudo. Se salti un giorno, protegge la serie.</dd></div>
@@ -506,6 +515,20 @@
         </dl>
       </div>
       <div class="phone"><img src="/img/traguardi.webp" width="720" height="1397" loading="lazy" alt="La schermata Traguardi, con le coccarde per le missioni svolte."></div>
+    </div>
+  </section>
+
+  <section class="cast-home" id="personaggi">
+    <div class="wrap">
+      <h2>Chi ti accompagna</h2>
+      <p class="section-intro">Giulia, Luca, Bruno e Aurora: quattro persone, quattro motivi per imparare l'AI. Nell'app ne scegli uno e cresce con te.</p>
+      <ul class="cast-row">
+        <li><a href="/personaggi/#giulia"><img src="/img/personaggi/giulia/stadio-0.webp" width="720" height="900" loading="lazy" alt="Giulia, impiegata, col telefono in mano"><strong>Giulia</strong><span>Vuole scrivere il suo libro</span></a></li>
+        <li><a href="/personaggi/#luca"><img src="/img/personaggi/luca/stadio-0.webp" width="720" height="900" loading="lazy" alt="Luca, neoassunto, con occhiali e cravatta"><strong>Luca</strong><span>Vuole fare carriera</span></a></li>
+        <li><a href="/personaggi/#bruno"><img src="/img/personaggi/bruno/stadio-0.webp" width="720" height="900" loading="lazy" alt="Bruno, pensionato, perplesso col telefono"><strong>Bruno</strong><span>Vuole battere i nipoti</span></a></li>
+        <li><a href="/personaggi/#aurora"><img src="/img/personaggi/aurora/stadio-0.webp" width="720" height="900" loading="lazy" alt="Aurora, universitaria, con una pila di libri"><strong>Aurora</strong><span>Vuole laurearsi</span></a></li>
+      </ul>
+      <a class="cast-link" href="/personaggi/">Leggi le loro storie</a>
     </div>
   </section>
 
