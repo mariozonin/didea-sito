@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I personaggi di Didea: Giulia, Luca, Bruno e Aurora | Didea</title>
+<meta name="description" content="Quattro persone, quattro motivi per imparare a usare l'AI. Le storie di Giulia, Luca, Bruno e Aurora, raccontate da loro.">
+<meta property="og:title" content="I personaggi di Didea">
+<meta property="og:description" content="Giulia, Luca, Bruno e Aurora: quattro storie, quattro motivi per imparare a usare l'AI.">
+<meta property="og:image" content="https://didea.it/img/og.png">
+<meta property="og:url" content="https://didea.it/personaggi/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Didea">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://didea.it/personaggi/">
+<meta name="theme-color" content="#A8512F">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face { font-family: "Inter"; src: url("/fonts/inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+  :root { --bg: #FAF8F6; --surface: #FFFFFF; --line: #E5DED7; --text: #2B2420; --text-soft: #6B6058; --accent: #A8512F; --accent-text: #A8512F; --bubble-me: #F3E3DA; --stage: #F3ECE6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1C1815; --surface: #262019; --line: #3A322B; --text: #F2ECE6; --text-soft: #B7ACA3; --accent-text: #D98A63; --bubble-me: #3A241A; --stage: #2E2620; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 1.0625rem; line-height: 1.65; }
+  a { color: var(--accent-text); text-underline-offset: 0.18em; }
+  a:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; border-radius: 4px; }
+  .wrap { width: min(960px, 100%); margin: 0 auto; padding: 0 24px; }
+  .narrow { max-width: 720px; }
+  header { background: var(--accent); color: #FFFFFF; padding: 24px 0 56px; }
+  .brand { display: inline-flex; align-items: center; gap: 8px; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; color: inherit; text-decoration: none; }
+  .brand svg { width: 30px; height: 30px; fill: currentColor; }
+  h1 { margin: 40px 0 0; font-size: clamp(2.25rem, 6.5vw, 3.5rem); line-height: 1.06; font-weight: 750; letter-spacing: -0.035em; }
+  .lead { margin: 16px 0 0; max-width: 620px; font-size: 1.1875rem; line-height: 1.5; }
+  main { padding: 48px 0 72px; }
+  h2 { margin: 0; font-size: clamp(2rem, 5vw, 2.75rem); line-height: 1.08; font-weight: 750; letter-spacing: -0.03em; }
+  h3 { margin: 40px 0 12px; font-size: 1.375rem; line-height: 1.2; font-weight: 720; letter-spacing: -0.02em; }
+  p { margin: 0 0 16px; }
+
+  /* Indice del cast */
+  .cast { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .cast a { display: block; padding: 12px 12px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; text-decoration: none; color: var(--text); text-align: center; transition: transform .2s ease, border-color .2s ease; }
+  .cast a:hover { transform: translateY(-3px); border-color: var(--accent-text); }
+  .cast img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: contain; border-radius: 12px; background: var(--stage); }
+  .cast strong { display: block; margin-top: 10px; font-size: 1.125rem; color: var(--accent-text); }
+  .cast span { display: block; font-size: 0.875rem; color: var(--text-soft); line-height: 1.35; }
+  .intro-text { margin: 32px 0 0; }
+
+  /* Scheda personaggio */
+  .person { margin-top: 88px; padding-top: 16px; scroll-margin-top: 16px; }
+  .person-top { display: grid; grid-template-columns: minmax(220px, 340px) 1fr; gap: 40px; align-items: start; }
+  .portrait { position: relative; margin: 0; aspect-ratio: 4 / 5; border-radius: 24px; background: var(--stage); overflow: hidden; }
+  .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+  .portrait .closed { opacity: 0; animation: blink 5.5s infinite; }
+  .person:nth-of-type(2) .portrait .closed { animation-delay: 1.3s; }
+  .person:nth-of-type(3) .portrait .closed { animation-delay: 2.6s; }
+  .person:nth-of-type(4) .portrait .closed { animation-delay: 3.9s; }
+  @keyframes blink { 0%, 95.9% { opacity: 0; } 96%, 98.4% { opacity: 1; } 98.5%, 100% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .portrait .closed { animation: none; } }
+  .kicker { margin: 0 0 6px; font-size: 0.9375rem; font-weight: 650; color: var(--accent-text); letter-spacing: 0.02em; text-transform: uppercase; }
+  .tagline { margin: 12px 0 24px; font-size: 1.1875rem; line-height: 1.45; color: var(--text-soft); }
+  .idcard { margin: 0; padding: 20px 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; display: grid; grid-template-columns: auto 1fr; gap: 8px 20px; }
+  .idcard dt { font-size: 0.875rem; font-weight: 650; color: var(--text-soft); padding-top: 2px; }
+  .idcard dd { margin: 0; line-height: 1.45; }
+  .traits { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .traits li { padding: 6px 14px; border-radius: 999px; background: var(--bubble-me); font-size: 0.9375rem; font-weight: 550; }
+
+  .story { max-width: 720px; }
+  .story p { font-size: 1.125rem; line-height: 1.7; }
+  .story .first::first-letter { float: left; font-size: 3.4em; line-height: 0.85; font-weight: 750; padding: 6px 10px 0 0; color: var(--accent-text); }
+  .quote { margin: 32px 0; padding: 4px 0 4px 20px; border-left: 4px solid var(--accent); font-size: 1.3125rem; line-height: 1.45; font-weight: 600; letter-spacing: -0.01em; }
+  .quote cite { display: block; margin-top: 8px; font-size: 0.9375rem; font-style: normal; font-weight: 500; color: var(--text-soft); }
+
+  /* Percorso a stadi */
+  .stages { list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+  .stages li { scroll-snap-align: start; }
+  .stages figure { margin: 0; }
+  .stages img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: contain; border-radius: 16px; background: var(--stage); }
+  .stages figcaption { margin-top: 10px; font-size: 0.9375rem; line-height: 1.45; }
+  .stages b { display: block; font-size: 0.8125rem; color: var(--accent-text); letter-spacing: 0.04em; text-transform: uppercase; }
+  .arc { margin: 0; color: var(--text-soft); }
+  .locked { display: grid; place-items: center; aspect-ratio: 4 / 5; border-radius: 16px; border: 2px dashed var(--line); background: var(--surface); color: var(--accent-text); }
+  .locked span { font-size: 3rem; font-weight: 750; opacity: .55; }
+  .locked.goal { border-style: solid; border-color: var(--accent-text); background: var(--bubble-me); padding: 12px; text-align: center; }
+  .locked.goal span { font-size: 1.0625rem; line-height: 1.3; opacity: 1; }
+  .cap { margin: 10px 0 0; font-size: 0.9375rem; line-height: 1.45; }
+  .cap b, .stages figcaption b { display: block; font-size: 0.8125rem; color: var(--accent-text); letter-spacing: 0.04em; text-transform: uppercase; }
+  .hint { display: none; margin: 0; font-size: 0.875rem; color: var(--text-soft); }
+
+  .cta-box { margin-top: 96px; padding: 32px; border-radius: 20px; background: var(--accent); color: #FFFFFF; }
+  .cta-box h2 { margin: 0 0 8px; font-size: clamp(1.5rem, 3.6vw, 2rem); }
+  .cta-box p { margin: 0 0 24px; max-width: 600px; }
+  .cta { display: inline-block; padding: 14px 24px; border-radius: 14px; background: #FFFFFF; color: #8B3F22; font-weight: 650; text-decoration: none; }
+  footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--text-soft); font-size: 0.9375rem; }
+  footer p:last-child { margin-bottom: 0; }
+
+  @media (max-width: 760px) {
+    .cast { grid-template-columns: repeat(2, 1fr); }
+    .person-top { grid-template-columns: 1fr; gap: 24px; }
+    .portrait { max-width: 320px; }
+    .stages { margin: 16px -24px 0; padding: 4px 24px 16px; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 40%; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 24px; }
+  }
+  @media (max-width: 460px) {
+    .wrap { padding: 0 16px; }
+    .stages { margin: 16px -16px 0; padding: 4px 16px 16px; grid-auto-columns: 62%; scroll-padding-inline: 16px; }
+    .idcard { grid-template-columns: 1fr; gap: 2px; }
+    .idcard dd { margin-bottom: 10px; }
+    .cta-box { padding: 24px; }
+    .cta { display: block; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Didea, pagina iniziale">
+      <svg viewBox="7.75 8 25 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.75 9h8a11 11 0 0 1 0 22h-8v-4.5l-4.5 4.5V9zm8 7.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4z"/></svg>
+      Didea
+    </a>
+    <h1>I personaggi di Didea</h1>
+    <p class="lead">Quattro persone, quattro motivi per imparare a usare l'AI. Nessuno di loro è un esperto: ognuno è partito da una domanda e da un po' di confusione.</p>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <ul class="cast">
+      <li><a href="#giulia"><img src="/img/personaggi/giulia/stadio-0.webp" width="720" height="900" alt="Giulia, perplessa, col telefono in mano"><strong>Giulia</strong><span>Vuole scrivere il suo libro</span></a></li>
+      <li><a href="#luca"><img src="/img/personaggi/luca/stadio-0.webp" width="720" height="900" alt="Luca, perplesso, si gratta la testa"><strong>Luca</strong><span>Vuole fare carriera</span></a></li>
+      <li><a href="#bruno"><img src="/img/personaggi/bruno/stadio-0.webp" width="720" height="900" alt="Bruno, perplesso davanti al telefono"><strong>Bruno</strong><span>Vuole battere i nipoti</span></a></li>
+      <li><a href="#aurora"><img src="/img/personaggi/aurora/stadio-0.webp" width="720" height="900" alt="Aurora, preoccupata, con una pila di libri"><strong>Aurora</strong><span>Vuole laurearsi</span></a></li>
+    </ul>
+    <div class="intro-text narrow">
+      <p>Li vedi nei nostri post. Qui ti raccontano chi sono, cosa li ha fatti arrabbiare la prima volta che hanno usato l'AI e cosa è cambiato dopo. Le loro storie sono inventate; i problemi no.</p>
+    </div>
+
+    <!-- GIULIA -->
+    <section class="person" id="giulia" aria-labelledby="giulia-nome">
+      <div class="person-top">
+        <figure class="portrait">
+          <img src="/img/personaggi/giulia/stadio-0.webp" width="720" height="900" alt="Giulia: chignon castano, maglione terracotta, una mano sulla fronte e il telefono nell'altra">
+          <img class="closed" src="/img/personaggi/giulia/stadio-0-occhi-chiusi.webp" width="720" height="900" alt="" aria-hidden="true">
+        </figure>
+        <div>
+          <p class="kicker">L'impiegata con un libro nel cassetto</p>
+          <h2 id="giulia-nome">Giulia</h2>
+          <p class="tagline">Precisa fino allo sfinimento, ironica quando è stanca. Ha un giallo da finire e mai il tempo per farlo.</p>
+          <dl class="idcard">
+            <dt>Età</dt><dd>31 anni</dd>
+            <dt>Dove</dt><dd>Torino, ufficio acquisti</dd>
+            <dt>Segno particolare</dt><dd>Un post-it di colore diverso per ogni idea. Il giallo è per il romanzo.</dd>
+            <dt>Frase tipica</dt><dd>«Te lo mando entro stasera.»</dd>
+            <dt>Punto debole</dt><dd>Dice sempre di sì.</dd>
+            <dt>Obiettivo</dt><dd>Scrivere il suo libro</dd>
+          </dl>
+          <ul class="traits" aria-label="Carattere">
+            <li>Precisa</li><li>Ironica</li><li>Testarda</li><li>Rilegge tutto tre volte</li>
+          </ul>
+        </div>
+      </div>
+      <div class="story">
+        <h3>La mia storia</h3>
+        <p class="first">Ogni mattina apro la posta e conto le email. Quarantadue, di solito. È il mio modo di sapere quanto sarà lunga la giornata. Riassunti per il capo, solleciti ai fornitori, verbali di riunioni, richieste «urgenti» arrivate alle sei di sera. Alla fine di ogni giornata ho finito le parole, e la sera, quando dovrei scrivere, fisso il cursore.</p>
+        <p>Nel cassetto ho undici pagine. Un giallo ambientato in una pasticceria di Borgo San Paolo: la pasticcera trova un biglietto dentro un bignè. Ferme da tre anni, proprio al biglietto.</p>
+        <p>La prima volta che ho provato l'AI le ho scritto «riassumi questa mail». Mi ha restituito un riassunto perfetto e del tutto inutile. Ci sono rimasta male, poi ho capito: non sapeva niente. Non sapeva che quel fornitore era in ritardo da due settimane e che a me serviva solo la nuova data di consegna. Quando gliel'ho detto, la risposta è diventata una riga sola. Quella giusta.</p>
+        <p>Da lì è cambiato il ritmo. Le risposte ai fornitori le imposto in due minuti e le sistemo io. Il verbale della riunione è pronto prima che finisca il caffè. Le cose che facevo ogni settimana, sempre uguali, ora hanno le loro istruzioni pronte: non le rispiego ogni volta. Quello che mi prendeva una mattina adesso mi prende mezz'ora.</p>
+        <blockquote class="quote">L'AI non scrive il mio libro. Mi restituisce le sere per scriverlo.<cite>Giulia</cite></blockquote>
+        <p>Alle sei chiudo il portatile dell'ufficio e apro il quaderno con i post-it gialli. Ieri la pasticcera ha finalmente letto il biglietto. Non vi dico cosa c'era scritto.</p>
+      </div>
+      <h3>Il suo percorso</h3>
+      <p class="arc">Da impiegata sommersa a scrittrice. Sei tappe: la prima la conosci già.</p>
+      <ol class="stages">
+        <li><figure><img src="/img/personaggi/giulia/stadio-0.webp" width="720" height="900" loading="lazy" alt="Giulia perplessa col telefono"><figcaption><b>Inizio</b>Quarantadue email e nessuna voglia.</figcaption></figure></li>
+        <li><div class="locked" aria-label="Tappa 1, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 1</b>Da scoprire</p></li>
+        <li><div class="locked" aria-label="Tappa 2, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 2</b>Da scoprire</p></li>
+        <li><div class="locked" aria-label="Tappa 3, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 3</b>Da scoprire</p></li>
+        <li><div class="locked" aria-label="Tappa 4, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 4</b>Da scoprire</p></li>
+        <li><div class="locked goal"><span>Scrivere il suo libro</span></div><p class="cap"><b>Traguardo</b>Come ci arriva? Presto lo scoprirai.</p></li>
+      </ol>
+    </section>
+
+    <!-- LUCA -->
+    <section class="person" id="luca" aria-labelledby="luca-nome">
+      <div class="person-top">
+        <figure class="portrait">
+          <img src="/img/personaggi/luca/stadio-0.webp" width="720" height="900" alt="Luca: occhiali tondi, camicia bianca e cravatta terracotta, si gratta la testa col telefono in mano">
+          <img class="closed" src="/img/personaggi/luca/stadio-0-occhi-chiusi.webp" width="720" height="900" alt="" aria-hidden="true">
+        </figure>
+        <div>
+          <p class="kicker">Il nuovo arrivato</p>
+          <h2 id="luca-nome">Luca</h2>
+          <p class="tagline">Entusiasta, un po' ansioso, sempre col taccuino. Vuole farsi notare, ma per le cose giuste.</p>
+          <dl class="idcard">
+            <dt>Età</dt><dd>27 anni</dd>
+            <dt>Dove</dt><dd>Milano, ufficio commerciale. Viene da Lecce.</dd>
+            <dt>Segno particolare</dt><dd>La cravatta terracotta: gliel'ha regalata la mamma per il primo giorno.</dd>
+            <dt>Frase tipica</dt><dd>«Un attimo che me lo segno.»</dd>
+            <dt>Punto debole</dt><dd>Si vergogna di chiedere.</dd>
+            <dt>Obiettivo</dt><dd>Fare carriera</dd>
+          </dl>
+          <ul class="traits" aria-label="Carattere">
+            <li>Entusiasta</li><li>Ansioso</li><li>Curioso</li><li>Prende appunti su tutto</li>
+          </ul>
+        </div>
+      </div>
+      <div class="story">
+        <h3>La mia storia</h3>
+        <p class="first">Il primo giorno mi hanno dato un portatile, una password e un file con quattromila righe di vendite. «Mi prepari i numeri per la riunione di giovedì?» Ho risposto «certo» con la voce di uno che sa cosa fare. Non lo sapevo.</p>
+        <p>Chiedere ai colleghi? Ero lì da tre ore. Ho provato con l'AI e le ho scritto «fammi un riepilogo». Ne è uscito un riepilogo di qualcosa. Bello, ordinato, e non rispondeva a nessuna domanda che il mio capo avrebbe fatto.</p>
+        <p>Poi ho cominciato a trattarla come una collega appena arrivata, cioè come me: le ho spiegato chi avrebbe letto, a cosa serviva e cosa contava davvero. Le risposte sono cambiate. E ho imparato anche a ricontrollare: una volta un totale non tornava, e l'ho scoperto io prima di giovedì.</p>
+        <blockquote class="quote">Non mi serve che l'AI lavori al posto mio. Mi serve arrivare in riunione sapendo cosa dire.<cite>Luca</cite></blockquote>
+        <p>A fine mese il capo ha chiesto chi aveva preparato l'analisi. Ho alzato la mano. Ha notato anche la cravatta.</p>
+      </div>
+      <h3>Il suo percorso</h3>
+      <p class="arc">Da neoassunto a chi guida la riunione. Sei tappe: la prima la conosci già.</p>
+      <ol class="stages">
+        <li><figure><img src="/img/personaggi/luca/stadio-0.webp" width="720" height="900" loading="lazy" alt="Luca perplesso col telefono"><figcaption><b>Inizio</b>Primo giorno. Quattromila righe.</figcaption></figure></li>
+        <li><div class="locked" aria-label="Tappa 1, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 1</b>Da scoprire</p></li>
+        <li><div class="locked" aria-label="Tappa 2, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 2</b>Da scoprire</p></li>
+        <li><div class="locked" aria-label="Tappa 3, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 3</b>Da scoprire</p></li>
+        <li><div class="locked" aria-label="Tappa 4, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 4</b>Da scoprire</p></li>
+        <li><div class="locked goal"><span>Fare carriera</span></div><p class="cap"><b>Traguardo</b>Come ci arriva? Presto lo scoprirai.</p></li>
+      </ol>
+    </section>
+
+    <!-- BRUNO -->
+    <section class="person" id="bruno" aria-labelledby="bruno-nome">
+      <div class="person-top">
+        <figure class="portrait">
+          <img src="/img/personaggi/bruno/stadio-0.webp" width="720" height="900" alt="Bruno: capelli e baffi bianchi, occhiali sulla testa, cardigan beige, guarda il telefono accigliato">
+          <img class="closed" src="/img/personaggi/bruno/stadio-0-occhi-chiusi.webp" width="720" height="900" alt="" aria-hidden="true">
+        </figure>
+        <div>
+          <p class="kicker">Il nonno curioso</p>
+          <h2 id="bruno-nome">Bruno</h2>
+          <p class="tagline">Brontolone col cuore buono. Diffidente all'inizio, poi non lo ferma più nessuno.</p>
+          <dl class="idcard">
+            <dt>Età</dt><dd>71 anni</dd>
+            <dt>Dove</dt><dd>Savona, in cucina. Capostazione in pensione.</dd>
+            <dt>Segno particolare</dt><dd>Gli occhiali sulla testa. Che cerca per tutta la casa.</dd>
+            <dt>Frase tipica</dt><dd>«Ai miei tempi bastava un orario stampato.»</dd>
+            <dt>Punto di forza</dt><dd>Fa domande finché non ha capito.</dd>
+            <dt>Obiettivo</dt><dd>Diventare il più tecnologico della famiglia</dd>
+          </dl>
+          <ul class="traits" aria-label="Carattere">
+            <li>Curioso</li><li>Testardo</li><li>Brontolone</li><li>Ottimo cuoco</li>
+          </ul>
+        </div>
+      </div>
+      <div class="story">
+        <h3>La mia storia</h3>
+        <p class="first">A Natale i nipoti mi hanno regalato un telefono nuovo. È rimasto nella scatola una settimana. Per quarant'anni ho fatto partire treni in orario al minuto: non avevo bisogno di uno schermo che mi dicesse cosa fare.</p>
+        <p>Poi mia figlia mi ha parlato dell'AI. «Chiedile quello che vuoi, papà.» Allora le ho chiesto come si fa il pesto. Il pesto lo faccio da cinquant'anni: volevo vedere se sbagliava. Ha messo troppo aglio. Gliel'ho detto, e mi ha dato ragione. Lì ho capito che si poteva ragionare.</p>
+        <p>Da quel giorno le chiedo di tutto. Di spiegarmi la bolletta riga per riga. Di aiutarmi a scrivere all'amministratore del condominio senza sembrare arrabbiato (lo ero). Di farmi un programma per andare a trovare mio nipote che studia all'estero, con i treni giusti. Quelli li ricontrollo io, si capisce.</p>
+        <blockquote class="quote">Non ho paura di sbagliare. Ho paura di non capire. E quando non capisco, chiedo ancora.<cite>Bruno</cite></blockquote>
+        <p>L'ultimo Natale sono stato io a spiegare una cosa nuova ai nipoti. Mi guardavano come io guardavo i primi treni elettrici. Mia figlia dice che adesso esagero. Ha ragione.</p>
+      </div>
+      <h3>Il suo percorso</h3>
+      <p class="arc">Da occhiali sulla testa a nonno del futuro. Sei tappe: la prima la conosci già.</p>
+      <ol class="stages">
+        <li><figure><img src="/img/personaggi/bruno/stadio-0.webp" width="720" height="900" loading="lazy" alt="Bruno perplesso col telefono"><figcaption><b>Inizio</b>Il telefono nuovo. E gli occhiali chissà dove.</figcaption></figure></li>
+        <li><div class="locked" aria-label="Tappa 1, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 1</b>Da scoprire</p></li>
+        <li><div class="locked" aria-label="Tappa 2, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 2</b>Da scoprire</p></li>
+        <li><div class="locked" aria-label="Tappa 3, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 3</b>Da scoprire</p></li>
+        <li><div class="locked" aria-label="Tappa 4, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 4</b>Da scoprire</p></li>
+        <li><div class="locked goal"><span>Diventare il più tecnologico della famiglia</span></div><p class="cap"><b>Traguardo</b>Come ci arriva? Presto lo scoprirai.</p></li>
+      </ol>
+    </section>
+
+    <!-- AURORA -->
+    <section class="person" id="aurora" aria-labelledby="aurora-nome">
+      <div class="person-top">
+        <figure class="portrait">
+          <img src="/img/personaggi/aurora/stadio-0.webp" width="720" height="900" alt="Aurora: capelli neri lisci, occhi verdi, sciarpa e maglione chiaro, stringe una pila di libri con aria preoccupata">
+          <img class="closed" src="/img/personaggi/aurora/stadio-0-occhi-chiusi.webp" width="720" height="900" alt="" aria-hidden="true">
+        </figure>
+        <div>
+          <p class="kicker">La studentessa che vuole capire</p>
+          <h2 id="aurora-nome">Aurora</h2>
+          <p class="tagline">Determinata, scrupolosa, allergica alle scorciatoie. Vuole sapere il perché di tutto.</p>
+          <dl class="idcard">
+            <dt>Età</dt><dd>22 anni</dd>
+            <dt>Dove</dt><dd>Padova, Biotecnologie. Fuorisede da Cosenza.</dd>
+            <dt>Segno particolare</dt><dd>La sciarpa, anche a maggio. Ed evidenziatori di cinque colori.</dd>
+            <dt>Frase tipica</dt><dd>«Spiegamelo come se avessi dieci anni. Poi come se ne avessi venti.»</dd>
+            <dt>Regola d'oro</dt><dd>La tesi la scrive lei. Ogni parola.</dd>
+            <dt>Obiettivo</dt><dd>Laurearsi</dd>
+          </dl>
+          <ul class="traits" aria-label="Carattere">
+            <li>Determinata</li><li>Scrupolosa</li><li>Onesta</li><li>Mai una scorciatoia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="story">
+        <h3>La mia storia</h3>
+        <p class="first">Biochimica: l'esame che non riuscivo a passare. Avevo studiato tutto a memoria, e alla prima domanda fatta in modo diverso dal libro mi sono bloccata. Mi sono ritirata a metà orale, sono tornata in stanza e ho pianto sopra gli appunti. Gli evidenziatori si sono sbavati.</p>
+        <p>Intanto i miei compagni usavano l'AI per farsi fare i riassunti. Io no: mi sembrava di barare. Poi ho capito che il problema non era lo strumento, era la domanda. Non le chiedo di studiare al posto mio. Le chiedo di interrogarmi.</p>
+        <p>Le spiego un argomento con parole mie e le chiedo dove sbaglio. Quando non capisco una cosa, me la faccio spiegare in tre modi diversi finché uno funziona. E quando mi dice qualcosa di nuovo, le chiedo da dove viene e vado a controllare sul libro. A volte è il libro a darle torto.</p>
+        <blockquote class="quote">Il giorno della discussione voglio saper rispondere a qualunque domanda. Senza nessuno accanto.<cite>Aurora</cite></blockquote>
+        <p>Biochimica, appello successivo: ventinove. Il professore mi ha chiesto dove avessi imparato a ragionare così. Gli ho detto: a forza di domande.</p>
+      </div>
+      <h3>Il suo percorso</h3>
+      <p class="arc">Da matricola a dottoressa. Sei tappe: la prima la conosci già.</p>
+      <ol class="stages">
+        <li><figure><img src="/img/personaggi/aurora/stadio-0.webp" width="720" height="900" loading="lazy" alt="Aurora preoccupata con una pila di libri"><figcaption><b>Inizio</b>Libri di carta e tanta paura.</figcaption></figure></li>
+        <li><div class="locked" aria-label="Tappa 1, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 1</b>Da scoprire</p></li>
+        <li><div class="locked" aria-label="Tappa 2, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 2</b>Da scoprire</p></li>
+        <li><div class="locked" aria-label="Tappa 3, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 3</b>Da scoprire</p></li>
+        <li><div class="locked" aria-label="Tappa 4, da scoprire"><span aria-hidden="true">?</span></div><p class="cap"><b>Tappa 4</b>Da scoprire</p></li>
+        <li><div class="locked goal"><span>Laurearsi</span></div><p class="cap"><b>Traguardo</b>Come ci arriva? Presto lo scoprirai.</p></li>
+      </ol>
+    </section>
+
+    <div class="cta-box">
+      <h2>E tu, da dove parti?</h2>
+      <p>Su Didea impari a usare l'AI come loro: lezioni da cinque minuti ed esercizi pratici, dalla prima chat a Claude Code.</p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=it.didea.app">Scarica gratis su Google Play</a>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <p><a href="/">Torna a Didea</a> · <a href="/guide/">Tutte le guide</a></p>
+    <p>I personaggi e le loro storie sono inventati. Le immagini sono state create con l'AI.</p>
+    <p>Didea è un'app indipendente. Non è affiliata, sponsorizzata né approvata da Anthropic. "Claude" è un marchio di Anthropic.</p>
+  </div>
+</footer>
+</body>
+</html>
