@@ -51,6 +51,18 @@
   .cast span { display: block; font-size: 0.875rem; color: var(--text-soft); line-height: 1.35; }
   .intro-text { margin: 32px 0 0; }
 
+  /* Video del cast (YouTube caricato solo al tocco) */
+  .cast-video { margin: 40px auto 0; max-width: 340px; text-align: center; }
+  .cast-video .frame { position: relative; aspect-ratio: 9 / 16; border-radius: 24px; overflow: hidden; background: var(--stage); }
+  .cast-video button { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; background: none; cursor: pointer; }
+  .cast-video button img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .cast-video .play { position: absolute; left: 50%; top: 82%; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; background: var(--accent); box-shadow: 0 6px 20px rgba(0,0,0,.25); transition: transform .2s ease; }
+  .cast-video .play::after { content: ""; position: absolute; left: 30px; top: 22px; border-style: solid; border-width: 16px 0 16px 26px; border-color: transparent transparent transparent #FFFFFF; }
+  .cast-video button:hover .play { transform: scale(1.06); }
+  .cast-video button:focus-visible { outline: 3px solid var(--accent-text); outline-offset: -3px; border-radius: 24px; }
+  .cast-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .cast-video figcaption { margin-top: 10px; font-size: 0.875rem; color: var(--text-soft); line-height: 1.4; }
+
   /* Scheda personaggio */
   .person { margin-top: 88px; padding-top: 16px; scroll-margin-top: 16px; }
   .person-top { display: grid; grid-template-columns: minmax(220px, 340px) 1fr; gap: 40px; align-items: start; }
@@ -137,6 +149,16 @@
     <div class="intro-text narrow">
       <p>Li vedi nei nostri post e nell'app: quando inizi, ne scegli uno e cresce con te. Qui ti raccontano chi sono, cosa li ha fatti arrabbiare la prima volta che hanno usato l'AI e cosa è cambiato dopo. Le loro storie sono inventate; i problemi no.</p>
     </div>
+
+    <figure class="cast-video">
+      <div class="frame">
+        <button type="button" id="cast-video-play" data-video="wnYkupSaFUU" aria-label="Guarda il video: Arrivano i personaggi (34 secondi, si apre YouTube)">
+          <img src="/img/personaggi/video/v7-copertina.webp" width="540" height="960" alt="" loading="lazy">
+          <span class="play" aria-hidden="true"></span>
+        </button>
+      </div>
+      <figcaption>Arrivano i personaggi, in 34 secondi. Il video si carica da YouTube solo quando premi ▶.</figcaption>
+    </figure>
 
     <!-- GIULIA -->
     <section class="person" id="giulia" aria-labelledby="giulia-nome">
@@ -329,5 +351,19 @@
     <p>Didea è un'app indipendente. Non è affiliata, sponsorizzata né approvata da Anthropic. "Claude" è un marchio di Anthropic.</p>
   </div>
 </footer>
+<script>
+  (function () {
+    var b = document.getElementById('cast-video-play');
+    if (!b) return;
+    b.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.video + '?autoplay=1&rel=0&playsinline=1';
+      f.title = 'Arrivano i personaggi, video di Didea';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      b.parentNode.replaceChild(f, b);
+    });
+  })();
+</script>
 </body>
 </html>
