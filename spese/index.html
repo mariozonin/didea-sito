@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I prompt del percorso «Il tuo report delle spese» | Didea</title>
+<meta name="description" content="I prompt delle cinque tappe del percorso di Didea «Il tuo report delle spese, aggiornato ogni mese», pronti da copiare sul computer.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#A8512F">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face { font-family: "Inter"; src: url("/fonts/inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+  :root { --bg: #FAF8F6; --surface: #FFFFFF; --line: #E5DED7; --text: #2B2420; --text-soft: #6B6058; --accent: #A8512F; --accent-text: #A8512F; --code: #F3E3DA; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1C1815; --surface: #262019; --line: #3A322B; --text: #F2ECE6; --text-soft: #B7ACA3; --accent-text: #D98A63; --code: #3A241A; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 1.0625rem; line-height: 1.6; }
+  a { color: var(--accent-text); text-underline-offset: 0.18em; }
+  .wrap { width: min(760px, 100%); margin: 0 auto; padding: 0 24px; }
+  header { background: var(--accent); color: #FFFFFF; padding: 24px 0 40px; }
+  .brand { display: inline-flex; align-items: center; gap: 8px; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; color: inherit; text-decoration: none; }
+  .brand svg { width: 30px; height: 30px; fill: currentColor; }
+  h1 { margin: 32px 0 0; font-size: clamp(2rem, 5vw, 2.75rem); line-height: 1.1; font-weight: 750; letter-spacing: -0.03em; }
+  .intro { margin: 16px 0 0; font-size: 1.0625rem; }
+  main { padding: 32px 0 64px; }
+  .tip { margin: 0 0 32px; padding: 16px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; color: var(--text-soft); }
+  .tappa { margin: 0 0 20px; padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
+  .n { margin: 0; font-size: 0.875rem; font-weight: 650; color: var(--accent-text); text-transform: uppercase; letter-spacing: 0.04em; }
+  h2 { margin: 4px 0 12px; font-size: 1.375rem; line-height: 1.25; font-weight: 720; letter-spacing: -0.02em; }
+  .how { margin: 0 0 14px; color: var(--text-soft); }
+  .prompt { margin: 0; padding: 16px 18px; border-radius: 12px; background: var(--code); white-space: pre-wrap; font: inherit; }
+  .row { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+  button { font: inherit; font-weight: 650; padding: 10px 20px; border-radius: 12px; border: 0; background: var(--accent); color: #FFFFFF; cursor: pointer; }
+  button:focus-visible { outline: 3px solid var(--accent-text); outline-offset: 3px; }
+  .ok { color: var(--accent-text); font-weight: 600; }
+  details { margin-top: 14px; }
+  summary { cursor: pointer; color: var(--accent-text); font-weight: 600; }
+  footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--text-soft); font-size: 0.9375rem; }
+  @media (max-width: 460px) { .wrap { padding: 0 16px; } .tappa { padding: 18px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Didea, pagina iniziale">
+      <svg viewBox="7.75 8 25 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.75 9h8a11 11 0 0 1 0 22h-8v-4.5l-4.5 4.5V9zm8 7.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4z"/></svg>
+      Didea
+    </a>
+    <h1>Il tuo report delle spese, aggiornato ogni mese</h1>
+    <p class="intro">I prompt delle cinque tappe, pronti da copiare. Tieni questa pagina aperta sul computer mentre segui le lezioni nell'app.</p>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <p class="tip">Copia il prompt della tappa in cui sei e incollalo nella scheda Code dell'app di Claude per computer, non nella chat. Il percorso è pensato per Windows.</p>
+
+    <section class="tappa">
+      <p class="n">Tappa 1</p>
+      <h2>Il primo pezzo, in una cartella tua</h2>
+      <p class="how">Prima crea una cartella nuova e vuota (per esempio «Spese» in Documenti) e sceglila con «Scegli una cartella in cui lavorare».</p>
+      <pre class="prompt" id="p1">Crea due file CSV di spese finte, ottobre e novembre, con data, descrizione, categoria e importo. Poi crea un programma che legge tutti i file della cartella e fa un report per mese con lo storico. Usa solo strumenti già presenti in Windows, senza installare niente.</pre>
+      <div class="row"><button data-copy="p1">Copia</button><span class="ok" aria-live="polite"></span></div>
+    </section>
+
+    <section class="tappa">
+      <p class="n">Tappa 2</p>
+      <h2>Chi decide cosa può toccare</h2>
+      <p class="how">Stessa cartella. Prima di incollare, scegli «Manuale» nel menu Modalità.</p>
+      <pre class="prompt" id="p2">Aggiungi a ottobre una spesa di viaggio: weekend a Torino, hotel, 140 euro.</pre>
+      <div class="row"><button data-copy="p2">Copia</button><span class="ok" aria-live="polite"></span></div>
+    </section>
+
+    <section class="tappa">
+      <p class="n">Tappa 3</p>
+      <h2>Prima il piano, poi i file</h2>
+      <p class="how">Stessa cartella. Prima di incollare, scegli «Piano» nel menu Modalità.</p>
+      <pre class="prompt" id="p3">Fai in modo che il programma crei anche un file report.html, con una tabella per mese e lo storico, da aprire nel browser.</pre>
+      <div class="row"><button data-copy="p3">Copia</button><span class="ok" aria-live="polite"></span></div>
+    </section>
+
+    <section class="tappa">
+      <p class="n">Tappa 4</p>
+      <h2>Da tabella a dashboard</h2>
+      <p class="how">Stessa cartella. Poi apri report.html, scegli un difetto che vedi e chiedi la correzione con parole tue.</p>
+      <pre class="prompt" id="p4">Trasforma report.html in una dashboard: tre riquadri: totale, differenza, spesa più grande; barre delle categorie dell'ultimo mese; i totali di tutti i mesi; un solo file che funziona senza internet.</pre>
+      <div class="row"><button data-copy="p4">Copia</button><span class="ok" aria-live="polite"></span></div>
+    </section>
+
+    <section class="tappa">
+      <p class="n">Tappa 5</p>
+      <h2>Il mese dopo</h2>
+      <p class="how">Qui il prompt lo scrivi tu. L'obiettivo: in una sessione nuova, fai aggiungere dicembre e aggiornare la dashboard senza spiegare di nuovo come funziona. Alla fine apri report.html e controlla che ci sia quello che hai chiesto.</p>
+      <details>
+        <summary>Se ti serve una spinta per il CLAUDE.md</summary>
+        <pre class="prompt" id="p5">Crea un file CLAUDE.md che spieghi a cosa serve questa cartella e come si aggiorna il report ogni mese.</pre>
+        <div class="row"><button data-copy="p5">Copia</button><span class="ok" aria-live="polite"></span></div>
+      </details>
+    </section>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <p>Le lezioni sono nell'app <a href="https://play.google.com/store/apps/details?id=it.didea.app">Didea su Google Play</a> · <a href="/">Torna a Didea</a></p>
+  </div>
+</footer>
+<script>
+  document.querySelectorAll('button[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var el = document.getElementById(b.getAttribute('data-copy'));
+      var msg = b.parentNode.querySelector('.ok');
+      var done = function () { msg.textContent = 'Copiato'; setTimeout(function () { msg.textContent = ''; }, 2000); };
+      var text = el.textContent;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { fallback(); });
+      } else { fallback(); }
+      function fallback() {
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        try { document.execCommand('copy'); done(); } catch (e) { msg.textContent = 'Premi Ctrl+C'; }
+      }
+    });
+  });
+</script>
+</body>
+</html>
