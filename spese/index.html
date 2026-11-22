@@ -37,6 +37,7 @@
   button { font: inherit; font-weight: 650; padding: 10px 20px; border-radius: 12px; border: 0; background: var(--accent); color: #FFFFFF; cursor: pointer; }
   button:focus-visible { outline: 3px solid var(--accent-text); outline-offset: 3px; }
   .ok { color: var(--accent-text); font-weight: 600; }
+  .sez { margin: 48px 0 12px; font-size: 1.75rem; }
   details { margin-top: 14px; }
   summary { cursor: pointer; color: var(--accent-text); font-weight: 600; }
   footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--text-soft); font-size: 0.9375rem; }
@@ -51,7 +52,7 @@
       Didea
     </a>
     <h1>Il tuo report delle spese, aggiornato ogni mese</h1>
-    <p class="intro">I prompt delle cinque tappe, pronti da copiare. Tieni questa pagina aperta sul computer mentre segui le lezioni nell'app.</p>
+    <p class="intro">I prompt delle cinque tappe e gli spunti finali, pronti da copiare. Tieni questa pagina aperta sul computer mentre segui le lezioni nell'app.</p>
   </div>
 </header>
 <main>
@@ -99,6 +100,33 @@
         <pre class="prompt" id="p5">Crea un file CLAUDE.md che spieghi a cosa serve questa cartella e come si aggiorna il report ogni mese.</pre>
         <div class="row"><button data-copy="p5">Copia</button><span class="ok" aria-live="polite"></span></div>
       </details>
+    </section>
+
+    <h2 class="sez">Ora tocca a te</h2>
+    <p class="tip">Hai finito il percorso? Ecco da dove ripartire. Copia la riga, incollala nella scheda Code nella cartella delle spese e continua tu.</p>
+
+    <section class="tappa">
+      <p class="n">Spunto</p>
+      <h2>Un budget per categoria</h2>
+      <p class="how">Fissa quanto vuoi spendere per ogni categoria e fai segnalare quelle sforate.</p>
+      <pre class="prompt" id="s1">Aggiungi un budget mensile per categoria e segnala quelle sforate</pre>
+      <div class="row"><button data-copy="s1">Copia</button><span class="ok" aria-live="polite"></span></div>
+    </section>
+
+    <section class="tappa">
+      <p class="n">Spunto</p>
+      <h2>Le categorie nel tempo</h2>
+      <p class="how">Un grafico per ogni categoria, per vedere come cambia mese dopo mese.</p>
+      <pre class="prompt" id="s2">Aggiungi un grafico per vedere come cambia ogni categoria</pre>
+      <div class="row"><button data-copy="s2">Copia</button><span class="ok" aria-live="polite"></span></div>
+    </section>
+
+    <section class="tappa">
+      <p class="n">Spunto</p>
+      <h2>Un doppio clic e basta</h2>
+      <p class="how">Un file che aggiorna e apre il report con un doppio clic, senza aprire Claude.</p>
+      <pre class="prompt" id="s3">Crea un file che con un doppio clic aggiorna e apre il report</pre>
+      <div class="row"><button data-copy="s3">Copia</button><span class="ok" aria-live="polite"></span></div>
     </section>
   </div>
 </main>
